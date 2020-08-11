@@ -32,6 +32,11 @@ Route::get('/projects/{project}','ProjectController@show')->name('projects.show'
 Route::get('/projects/{project}/editar','ProjectController@edit')->name('projects.edit');
 Route::patch('/projects/{project}','ProjectController@update')->name('projects.update');
 Route::post('/projects','ProjectController@store')->name('projects.store');
+// Chat.
+Route::get('/chat','ChatController@index')->name('chat.index');
+// Pago
+Route::get('/pago','MercadoPagoController@index')->name('pago.index');
+
 // Upload Files
 /*Route::get('fileupload', 'FileUploadController@fileUpload')->name('fileupload');
 
