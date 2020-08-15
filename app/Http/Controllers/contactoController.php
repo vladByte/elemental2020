@@ -22,4 +22,19 @@ class contactoController extends Controller
     	Mail::to('vlad.jerez@gmail.com')->queue(new ContactoRecibido($mensaje));
     	return 'Mensaje Enviado';
     }
+
+    public fucntion solicitudInfo()
+    {
+        $mensaje = request()->validate([
+            "name" => "required",
+            "email" => "required|email",
+            "curso" => "required",
+            "cod" => "required",
+            "phone" => "required",
+            "body" => "required|min:10", 
+        ]); 
+
+        Mail::to($mensaje['email'])->queue(new InfoSend($mensaje));
+        return 'Mensaje Enviado';
+    }
 }

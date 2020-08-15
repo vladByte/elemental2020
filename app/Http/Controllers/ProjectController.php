@@ -40,8 +40,8 @@ class ProjectController extends Controller
     {
         $fields = request()->validate([
             'title' => 'required',
-            'url' => 'required',
             'description' => 'required',
+            'url' => 'required',
         ]);
 
         Project::create($fields);

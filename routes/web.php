@@ -24,6 +24,7 @@ Route::view('/about','about')->name('about');
 
 Route::view('/contacto','contacto')->name('contacto');
 Route::post('/contacto','contactoController@store')->name('emailcontacto.store');
+Route::post('/info','contactoController@solicitudInfo')->name('email.info');
 
 // Project.
 Route::get('/projects','ProjectController@index')->name('projects.index');

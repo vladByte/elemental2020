@@ -4,6 +4,15 @@
 	<h1>{{ __('contact') }}</h1>
 	<h3>Escribenos...</h3>
 
+	@if( $errors->any() )
+		<ul>
+		@foreach($errors->all() as $error)
+			<li>{{  $error }} </li>
+		@endforeach
+		</ul>
+			
+	@endif
+
 	<form action="{{ route('emailcontacto.store') }}" method="POST">
 		@csrf
 		<input type="text" name="name" placeholder="Nombre..." value="{{ old('name') }}"><br>
